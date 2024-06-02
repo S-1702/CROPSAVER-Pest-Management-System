@@ -1,0 +1,197 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <title>Your Website</title>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            background-image: url('{% static 'comman_page.jpeg' %}');
+        }
+
+        .navbar {
+            background-color: #343a40;
+        }
+
+        .navbar-dark .navbar-nav .nav-link {
+            color: #ffffff;
+        }
+
+        .navbar-dark .navbar-toggler-icon {
+            background-color: #ffffff;
+        }
+
+        .jumbotron {
+            background-image: url("{% static 'home_page.jpeg' %}");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: #ffffff;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .content {
+            padding: 50px 20px;
+        }
+
+        .footer {
+            background-color: #343a40;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .card {
+            border: 1px solid black;
+            box-shadow: 0px 10px 10px gray;
+            padding: 4%;
+            border-radius: 20%;
+        }
+
+        .gallery {
+            height: fit-content;
+            width: fit-content;
+            padding: 5%;
+            border: 1px solid black;
+            box-shadow: 0px 10px 10px gray;
+        }
+
+        .gallery-btns {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        #file {
+            width: fit-content;
+            height: fit-content;
+        }
+
+        input {
+            width: fit-content;
+            height: fit-content;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="login">Login</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="signup">Signup</a>
+                </li>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="jumbotron"></div>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="gallery" style="background-color: whitesmoke;">
+                <h2>Motive...</h2>
+                <p>Pest detection is the process of identifying and monitoring the presence of harmful organisms, such as insects, diseases, or weeds, in agricultural or natural environments. It involves the use of various technologies, including image analysis and sensor systems, to recognize and diagnose potential threats, enabling timely and targeted intervention to minimize crop damage and enhance overall plant health.</p>
+                <br>
+                <br>
+
+                <h2 style="text-align: center;"> PEST DETECTION AVAILABLE IMAGES</h2>
+                <div class="row">
+                    <div class="col-6 mb-4">
+                        <div class="card">
+                            <img src="{% static 'pest1.jpg' %}" class="card-img-top" alt="Pest 1">
+                        </div>
+                    </div>
+                    <!-- Add similar columns for other pest images -->
+                </div>
+                <div class="row">
+                    <div class="col-6 mb-4">
+                        <div class="card">
+                            <img src="{% static 'pest2.jpg' %}" class="card-img-top" alt="Pest 1">
+                        </div>
+                    </div>
+                    <!-- Add similar columns for other pest images -->
+                </div>
+                <div class="row">
+                    <div class="col-6 mb-4">
+                        <div class="card">
+                            <img src="{% static 'pest3.jpg' %}" class="card-img-top" alt="Pest 1">
+                        </div>
+                    </div>
+                    <!-- Add similar columns for other pest images -->
+                </div>
+                <div class="row">
+                    <div class="col-6 mb-4">
+                        <div class="card">
+                            <img src="{% static 'pest4.jpg' %}" class="card-img-top" alt="Pest 1">
+                        </div>
+                    </div>
+                    <!-- Add similar columns for other pest images -->
+                </div>
+                <div class="row">
+                    <div class="col-6 mb-4">
+                        <div class="card">
+                            <img src="{% static 'pest5.jpg' %}" class="card-img-top" alt="Pest 1">
+                        </div>
+                    </div>
+                    <!-- Add similar columns for other pest images -->
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="gallery" style="background-color: whitesmoke;">
+                <form action="detect" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="gallery-btns">
+                        <input type="file" name="image" id="file" class="btn btn-primary">
+                        <button type="submit" class="btn btn-success">Progress Image</button>
+                    </div>
+                </form>
+                <code>Note : Pls Upload Pest Diease With Insects </code>
+                <p class="mt-3"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Add footer content here -->
+            </div>
+            <div class="col-md-6">
+                <!-- Add footer content here -->
+            </div>
+        </div>
+        
+        <p class="mt-3">Thank You For Using Our Site</p> <br>
+          
+        </p>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

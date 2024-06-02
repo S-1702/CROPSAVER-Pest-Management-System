@@ -1,0 +1,147 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <title>Pest Detection Output</title>
+    <style>
+        /* Add additional styling here if needed */
+        body {
+            padding: 20px;
+        }
+
+        .result-container {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .result
+        {
+         background-color: whitesmoke;
+          border: 1px solid black;
+          box-shadow: 0px 10px 10px gray;
+          padding: 5%;
+
+        }
+.result:hover{
+    
+    font-weight: 900;
+    text-decoration: underline black;
+}
+        body{
+            background-image: url('{% static "comman_page.jpeg"%}');
+        }
+        .result-container
+        {
+            background-color: whitesmoke;
+        }
+        .master
+        {
+
+            display:flex;
+            position: relative; left: 30px ;
+            padding: 4%;
+            align-content: center;
+
+        }
+    </style>
+</head>
+
+<body onload="changeImage()">
+<div class="master">
+    <!-- Description Container -->
+    <div class="col-md-6">
+        <div class="result-container">
+            <h2>About Pest Medicine</h2>
+            <p>
+                Pests live where they are not wanted or cause harm to crops, people, or animals. Pesticides can help get rid of them. Pesticides are not just insect killers. They also include chemicals to control weeds, rodents, mildew, germs, and more. Many household products contain pesticides.
+
+Pesticides can protect your health by killing germs, animals, or plants that could hurt you. However, they can also be harmful to people or pets. You might want to try non-chemical methods first. If you do need a pesticide, use it correctly. Be especially careful around children and pets. Proper disposal of pesticides is also important - it can help protect the environment.
+
+Biologically-based pesticides are becoming more popular. They often are safer than traditional pesticides.
+            </p>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="result-container">
+            <h2>Pest Detection Output</h2>
+            <!-- Add your result content here -->
+           <div class="result"> <h4>
+              Pest Name <strong> <code> {{corresponding_disease}} </code> </strong>
+            </h4>
+
+            
+
+            <hr>
+
+            <h3>
+
+                <h5> Recommanded Medicine {{medicine}}</h5>
+                <img id="randomImage" src="" alt="Pest Medicine Image"><br>
+                
+
+                <br>
+                <h5> 
+                    Availble Medicine On The Store
+
+
+                 <a href="{{ shop_linkss|random }}">
+    <label for="shops">Visit Here</label>
+</a>
+                </h5>
+            
+            </h3>
+
+          </div>
+            <!-- Go back button with icon -->
+            <a href="welcome" class="btn btn-primary" onclick="goBack()">
+                <i class="fas fa-home"></i> Go Back
+            </a>
+        </div>
+    </div>
+</div>
+
+    <!-- Bootstrap and Font Awesome JS scripts -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <script>
+        function changeImage() {
+            // Array of image URLs
+            var imageUrls = [
+                '{% static "m1.jpeg" %}',
+                '{% static "m2.jpeg" %}',
+                '{% static "m3.jpeg" %}',
+                '{% static "m4.jpeg" %}',
+                '{% static "m5.jpeg" %}',
+                '{% static "m6.jpeg" %}',
+                '{% static "m7.jpeg" %}',
+                '{% static "m8.jpeg" %}',
+                // Add more image URLs as needed
+            ];
+
+            // Get a random index from the array
+            var randomIndex = Math.floor(Math.random() * imageUrls.length);
+
+            // Set the src attribute of the img element to the randomly selected image URL
+            document.getElementById('randomImage').src = imageUrls[randomIndex];
+        }
+    </script>
+    <script>
+        function goBack() {
+            // You can customize this function to handle the "Go Back" functionality
+            //window.location.href="index.html"
+            alert("Go back functionality triggered");
+        }
+    </script>
+</body>
+
+</html>

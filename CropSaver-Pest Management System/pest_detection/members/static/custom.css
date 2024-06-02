@@ -1,0 +1,86 @@
+ul, li{
+
+  border: 1px solid black;
+  box-shadow: 0px 10px 10px gray;
+  border-radius: 20%;
+  padding: 3%;
+}
+
+
+li:hover
+{
+   size: 10px;
+   background-color: black;
+}
+
+.gallery
+{
+    border: 1px solid black;
+    box-shadow: 0px 10px 10px gray;
+    border-radius: 20%;
+    padding: 3%;
+}
+
+.jumbotron{
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: border-box;
+}
+
+
+body {
+    background-color: #f8f9fa;
+
+}
+
+.navbar {
+    background-color: #343a40;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #ffffff;
+}
+
+.navbar-dark .navbar-toggler-icon {
+    background-color: #ffffff;
+}
+
+.jumbotron {
+    background-image: url('your-image.jpg');
+    background-size: cover;
+    color: #ffffff;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.content {
+    padding: 50px 20px;
+}
+
+.footer {
+    background-color: #343a40;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+
+.gallery
+{
+
+    border: 1px solid black;
+    box-shadow: 0px 10px 10px gray;
+    padding: 4%;
+    border-radius: 20%;
+}
+
+
+.card{
+
+    border: 1px solid black;
+    box-shadow: 0px 10px 10px gray;
+    padding: 4%;
+    border-radius: 20%;
+}
